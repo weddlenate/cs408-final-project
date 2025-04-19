@@ -1,4 +1,52 @@
 h1{
-  border-color: #d3e644;
-  border-style: dashed;
+  width: 20%;
+  text-align: center;
+  border: solid 1px blue;
+}
+
+nav{
+  margin-top: 20px;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+button {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+a {
+  background-color: grey;
+  color: black;
+  text-decoration: none;
+  padding: 14px 25px;
+  border-radius: 4px;
+}
+
+a:hover {
+  background-color: black;
+  color: white;
+}
+
+#gameboard {
+  height: 90vh;
+  border: solid 1px black;
+}
+
+#indexmain {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
 }
