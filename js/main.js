@@ -670,20 +670,20 @@ class Tetrimino {
 
 const tetrimino = new Tetrimino(tetriminos[0], "blue");
 
-let start = new Date();
-let secondsStart = start.getSeconds();
+// let start = new Date();
+// let secondsStart = start.getSeconds();
 
 function loop() {
   ctx.strokeStyle = "rgba(0, 0, 0, 0.2)";
   ctx.lineWidth = 2;
   ctx.strokeRect(0, 0, width, height);
 
-  const now = new Date();
-  const secondsNow = now.getSeconds();
-  if (secondsNow > secondsStart) {
-    tetrimino.fall();
-    secondsStart++;
-  }
+  // const now = new Date();
+  // const secondsNow = now.getSeconds();
+  // if (secondsNow > secondsStart) {
+  //   tetrimino.fall();
+  //   secondsStart++;
+  // }
 
 
   drawGrid();
