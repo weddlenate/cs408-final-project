@@ -11,9 +11,27 @@
 
 <body>
   <header>
-    <button>Log In</button>
-    <button>Sign Up</button>
+    <button id="showLogIn">Log In</button>
+    <button id="showSignUp">Sign Up</button>
+    <p id="userinfo"></p>
   </header>
+
+  <div id="signUpScreen">
+    <h2>Sign Up</h2>
+    <p>Enter a username so we can keep track of your stats!</p>
+    <form>
+      <label for="username">Username: <input type="text" id="signUpUserName" placeholder="Enter a username" required></label><br>
+      <button id="signUpButton" aria-label="signUpButton">Sign Up</button>
+    </form>
+  </div>
+  <div id="logInScreen">
+    <h2>Log In</h2>
+    <p>Enter your username to log in!</p>
+    <form>
+      <label for="username">Username: <input type="text" id="logInUserName" placeholder="Enter a username" required></label><br>
+      <button id="logInButton" aria-label="logInButton">Log In</button>
+    </form>
+  </div>
 
   <div id="indexmain">
     <h1>Tetris</h1>
@@ -26,7 +44,8 @@
   </div>
   
   
-  <script type="module" src="js/main.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <!-- <script type="text/javascript" src="js/game.js"></script> -->
 </body>
 
 </html>

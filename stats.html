@@ -9,32 +9,21 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="statsBody">
 
   <h1>Stats</h1>
 
-  <table>
-    <tr>
-        <td>Single Clears</td>
-        <td>some number</td>
-    </tr>
-    <tr>
-        <td>Double Clears</td>
-        <td>some number</td>
-    </tr>
-    <tr>
-        <td>Triple Clears</td>
-        <td>some number</td>
-    </tr>
-    <tr>
-        <td>Tetris Clears</td>
-        <td>some number</td>
-    </tr>
-    <tr>
-        <td>other stats I haven't thought of yet</td>
-        <td>some number</td>
-    </tr>
-  </table>
+  <table id="statsTable">
+    <thead>
+        <tr>
+            <th scope=""col>Stat</th>
+            <th scope=""col>Total</th>
+        </tr>
+    </thead>
+    <tbody id="statsTableBody">
+
+    </tbody>
+</table>
 
   <nav>
     <a href="index.html">Home</a>
@@ -42,7 +31,7 @@
     <a href="rules.html">Rules</a>
   </nav>
   
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/stats.js"></script>
 </body>
 
 </html>
