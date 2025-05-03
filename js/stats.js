@@ -1,4 +1,5 @@
 //Updates the table using the populateTable() function
+
 let xhr = new XMLHttpRequest();
 xhr.addEventListener("load", function () {
     const dataText = xhr.response;
@@ -10,11 +11,28 @@ xhr.open("GET", "https://7p6ec3iwhf.execute-api.us-east-2.amazonaws.com/items");
 xhr.send();
 
 function populateTable (obj) {
-    //Get the node for the table body we want to add to
-    const table = document.getElementById("statsTableBody");
+    //Setup the top of the table
+    const table = document.getElementById("statsTable");
 
     //Clear table
     table.innerHTML = "";
+
+    //Make top of table 
+    const tableHead = document.createElement("thead")
+    const tableHeadRow = document.createElement("tr");
+    const tableHeadStat = document.createElement("th");
+    tableHeadStat.textContent = "Stat";
+    const tableHeadTotal = document.createElement("th");
+    tableHeadTotal.textContent = "Total";
+
+    tableHeadRow.appendChild(tableHeadStat);
+    tableHeadRow.appendChild(tableHeadTotal);
+    tableHead.appendChild(tableHeadRow);
+    table.appendChild(tableHead);
+
+    //Get the node for the table body we want to add to
+    const tableBody = document.createElement("tbody");
+    tableBody.id = "statsTableBody";
 
     //Get current user
     const username = JSON.parse(localStorage.getItem('username'));
@@ -77,52 +95,15 @@ function populateTable (obj) {
             tetrisesRow.appendChild(tetrisesID);
             tetrisesRow.appendChild(tetrisesData);
 
-            table.appendChild(timeRow);
-            table.appendChild(linesRow);
-            table.appendChild(scoreRow);
-            table.appendChild(singlesRow);
-            table.appendChild(doublesRow);
-            table.appendChild(triplesRow);
-            table.appendChild(tetrisesRow);
+            tableBody.appendChild(timeRow);
+            tableBody.appendChild(linesRow);
+            tableBody.appendChild(scoreRow);
+            tableBody.appendChild(singlesRow);
+            tableBody.appendChild(doublesRow);
+            tableBody.appendChild(triplesRow);
+            tableBody.appendChild(tetrisesRow);
+
+            table.appendChild(tableBody);
         } 
-        // //Create new elements to be appended on to the table body
-        // const dataRow = document.createElement("tr");
-        // const dataID = document.createElement("td");
-        // const dataName = document.createElement("td");
-        // const dataPrice = document.createElement("td");
-
-        // //Delete button
-        // const dataAction = document.createElement("td");
-        // dataAction.id = "deleteData";
-        // const deleteButton = document.createElement("button");
-        // deleteButton.id = "deleteButton"
-        // deleteButton.textContent = "Delete";
-
-        // //Delete button event listener to delete item from database
-        // deleteButton.addEventListener("click", (event) => {
-        //     let xhr = new XMLHttpRequest();
-        //     const url = "https://62no40vw1g.execute-api.us-east-2.amazonaws.com/items/" + item.id;
-        //     xhr.open("DELETE", url);
-        //     xhr.setRequestHeader("Content-Type", "application/json");
-        //     xhr.send();
-
-        //     let lambda = document.getElementById("lambda-info");
-        //     lambda.textContent = "Click \"Load Data\" to refresh table";
-        // })
-
-        // //Assign each part of the new row with the corresponding information from the database
-        // dataID.textContent = item.id;
-        // dataName.textContent = item.name;
-        // dataPrice.textContent = item.price;
-        // dataAction.appendChild(deleteButton);
-
-        // //Append the table data to the table row
-        // dataRow.appendChild(dataID);
-        // dataRow.appendChild(dataName);
-        // dataRow.appendChild(dataPrice);
-        // dataRow.appendChild(dataAction);
-
-        // //Append the table row to the table body
-        // table.appendChild(dataRow);
     }
 }

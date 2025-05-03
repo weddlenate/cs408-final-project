@@ -9,12 +9,17 @@ nav{
   width: 50%;
   display: flex;
   justify-content: space-around;
-  
 }
 
-button {
+#showLogIn, #showSignUp {
   cursor: pointer;
-  border-radius: 4px;
+  background-color: purple;
+  color: white;
+}
+
+#showLogIn:hover, #showSignUp:hover {
+  background-color: cyan;
+  color: black;
 }
 
 a {
@@ -23,6 +28,33 @@ a {
   text-decoration: none;
   padding: 14px 25px;
   border-radius: 4px;
+}
+
+#play, #rules, #stats, #home {
+  background-color: blue;
+  color: white;
+}
+
+#gameOverPlay, #gameOverRules, #gameOverStats, #gameOverHome {
+  background-color: red;
+  color: white;
+}
+
+#play:hover, #gameOverPlay:hover {
+  background-color: orange;
+}
+
+#rules:hover, #gameOverRules:hover {
+  background-color: yellow;
+  color: black;
+}
+
+#stats:hover, #gameOverStats:hover {
+  background-color: green;
+}
+
+#home:hover, #gameOverHome:hover {
+  background-color: purple;
 }
 
 a:hover {
@@ -49,6 +81,10 @@ canvas {
   top: -16px;
   height: 90vh;
   width: 45vh;
+}
+
+#tetrislogo {
+  height: 30vh;
 }
 
 #gameover, #signUpScreen, #logInScreen {
@@ -107,12 +143,26 @@ canvas {
   align-items: center;
 }
 
+#gamenav {
+  position: relative;
+  left: 25%;
+}
+
 table {
   border: 1px solid black;
 }
 
 td {
   border: 1px solid black;
+}
+
+th, td {
+  padding: 10px;
+  border: solid 1px;
+}
+
+th {
+  background-color: lightgrey;
 }
 
 #statsTable {
